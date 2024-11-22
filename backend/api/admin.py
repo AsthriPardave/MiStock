@@ -22,7 +22,7 @@ class PagoAdmin(admin.ModelAdmin):
 # Register your models here.
 
 admin.site.register(Cliente, ClienteAdmin)
-admin.site.register(Usuario, UsuarioAdmin)
+#admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Boleta, BoletaAdmin)
 admin.site.register(Productos, ProductosAdmin)
 admin.site.register(Ventas, VentasAdmin)

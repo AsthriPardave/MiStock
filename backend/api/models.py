@@ -6,6 +6,9 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=100)
     numero = models.CharField(max_length=9)
     deudor = models.BooleanField()
+   
+    def __str__(self) -> str:
+        return self.nombre + " " + self.apellido
 
 class Usuario(models.Model):
     usuario = models.CharField(max_length=100)
@@ -18,11 +21,14 @@ class Productos(models.Model):
     precio = models.FloatField()
     estado = models.CharField(max_length=50)
 
+    def __str__(self) -> str:
+        return self.nombre
+
 class Ventas(models.Model):
     cantProductos = models.IntegerField()
     precioTotal = models.FloatField()
     producto = models.ForeignKey(Productos, on_delete=models.CASCADE)
-
+    
 class Boleta(models.Model):
     fechaHora = models.DateTimeField()
     pagado = models.BooleanField()
